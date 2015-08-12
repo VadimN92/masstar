@@ -1,0 +1,368 @@
+// --------------------------------------------------
+//   Содержание файла стилей
+// -----------------------------------------------------
+// ::  Variables
+// ::  Mixins
+// ::  Reset
+// ::  Custom styles
+// ::  Header styles
+// ::  left aside
+// ::  Content styles
+// ::  responsive
+
+// -----------------------------------------
+// Variables
+// -----------------------------------------
+
+// Colors
+// -------------------------
+@redColor:							rgb(135, 49, 73);
+@WhiteColor:						#fff;
+@DarkLight:							rgb(68, 5, 6);
+@gray:								#ccc;
+@grayLight:							#ededed;
+@Dark:								#000;
+@grayDarck:							rgb(86, 86, 86);
+@grayDarckHov:						rgb(54, 4, 4);
+
+
+// Links color
+// -------------------------
+@linkColor:             #0086D4;
+@linkColorHover:        darken(@linkColor, 8%);
+
+// -----------------------------------------
+// Fonts face
+// -----------------------------------------
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=cyrillic,latin);
+
+
+// Fonts
+// -------------------------
+@baseFontFamily:		'Open Sans', sans-serif;
+@baseFontSize:          14px;
+@baseLineHeight:        1;
+@textColor:             #000;
+@bodyBackground:        #fff;
+
+@fs11:                  11px;
+@fs12:                  12px;
+@fs13:                  13px;
+@fs14:                  @baseFontSize;
+@fs16:                  16px;
+@fs18:                  18px;
+@fs20:                  20px;
+@fs22:                  22px;
+@fs24:                  24px;
+
+// Width
+// -------------------------
+@wBase:                 1280px;
+@wSideBar:              255px;
+
+// Z-index
+// -------------------------
+@zIndexFill:            1;
+@zIndexBase:            2;
+@zIndexToggle:          20;
+@zIndexFormSelect:      50;
+@zIndexButtonTop:       70;
+
+// Forms
+// -------------------------
+
+@inputHeight:           30px;
+
+// GRID
+// --------------------------------------------------
+// Default 960px grid
+// -------------------------
+@gridColumns:             12;
+@gridColumnWidth:         60px;
+@gridGutterWidth:         0;
+@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+
+// Fluid grid
+// -------------------------
+@fluidGridColumnWidth:    percentage(@gridColumnWidth/@gridRowWidth);
+@fluidGridGutterWidth:    percentage(@gridGutterWidth/@gridRowWidth);
+
+
+// -----------------------------------------
+// Mixins
+// -----------------------------------------
+// Clearfix
+.clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+	// Fixes Opera/contenteditable bug:
+	// http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+		line-height: 0;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// Center-align a block level element
+.center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Opacity
+.opacity(@opacity) {
+	opacity: @opacity / 100;
+	filter: ~"alpha(opacity=@{opacity})";
+}
+
+// Border Radius
+.border-radius(@radius) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+// Box sizing
+.box-sizing(@boxmodel) {
+	-webkit-box-sizing: @boxmodel;
+	-moz-box-sizing: @boxmodel;
+	box-sizing: @boxmodel;
+}
+
+// Drop shadows
+.box-shadow(@shadow) {
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+
+// Transitions
+.transition(@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+
+
+// general block size
+.f_block(){
+	.center-block();
+	width: 95%;
+	max-width: @wBase;
+}
+
+
+// -----------------------------------------
+// Reset
+// -----------------------------------------
+
+body{
+	margin: 0;
+	font-family: @baseFontFamily;
+	font-size: @baseFontSize;
+	line-height: @baseLineHeight;
+	color: @textColor;
+	background-color: @bodyBackground;
+
+}
+
+* {.box-sizing(border-box);}
+
+// -----------------------------------------
+// Custom styles
+// -----------------------------------------
+
+//
+// Grid system
+// --------------------------------------------------
+// Centered container element
+.container-fixed() {
+    margin-right: auto;
+    margin-left: auto;
+    .clearfix();
+}
+
+
+// Reset utility classes due to specificity
+[class*="span"].hide,
+.row-fluid [class*="span"].hide {
+    display: none;
+}
+
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+
+// Container (centered, fixed-width layouts)
+.container {
+    .container-fixed();
+}
+
+// Fluid layouts (left aligned, with sidebar, min- & max-width content)
+.container-fluid {
+    padding-right: @gridGutterWidth;
+    padding-left: @gridGutterWidth;
+    .clearfix();
+}
+
+.main-container {
+	.f_block();
+}
+
+
+.width-pattern{
+	width: 100%;
+	max-width: 980px;
+	margin: auto;
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+// HEADER style
+header {
+	background: rgb(237, 239, 243);
+
+}
+.header-logo {
+	height: 142px;
+
+	img {
+		margin-top: 17px;
+	} 
+}
+.time-work, .callback, .contact-phone {	
+	display: inline-block; 
+}
+.time-work {
+	vertical-align: middle;
+	margin-left: 40px;
+	.time-text {
+		color: rgb(191, 193, 196);
+	}
+
+	.time-img {
+		display: inline-block;
+		width: 11px;
+		height: 11px;
+		.border-radius(50%);
+	}
+
+	.bg-blue {
+		background: rgb(1, 44, 119);
+	}
+	.bg-silver {
+		background: rgb(208, 213, 224);
+	}
+}
+.callback {
+	margin: 17px 55px 20px 60px;
+	background: #fff;
+	padding: 9px 15px 10px 9px;
+	.box-shadow(0px 2px 3px 0px rgba(136, 169, 226, 1));
+	.border-radius(2px);
+
+
+	span, img{
+		vertical-align: middle;
+	}
+	span {
+		text-transform: uppercase;
+		color: rgb(17, 101, 171);
+		padding-left: 11px;
+		font-size: 11px;
+		font-weight: bolder;
+		letter-spacing: 1.3px;
+	}
+}
+.contact-phone {
+	span {
+		color: rgb(173, 175, 178);
+		font-size: 11px;
+	}
+	.num-phone {
+		color: rgb(1, 44, 119);
+		font-size: 18px;
+		font-weight: bold;
+		letter-spacing: 1.3px;
+	}
+}
+
+.line {
+	width: 728px;
+	float: right;
+	border-bottom: 1px solid rgb(208, 213, 224);
+}
+
+.main-nav {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 21px;
+	display: inline-block;
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		color: rgb(1, 44, 119);
+		font-weight: lighter;
+		padding-bottom: 6px;
+		margin-left: 22px;
+		border-bottom: 1px solid rgb(237, 239, 243);
+		font-size: 11px;
+		letter-spacing: 1.1px;
+
+		&:hover {
+			color: rgb(23, 23, 23);
+			border-bottom: 1px solid rgb(199, 205, 217);
+		}
+	}
+	a.active {
+		color: rgb(23, 23, 23);
+	}
+}
+
+
+.catalog-menu {
+	clear: both;
+	a {
+		float: left;
+		width: 33.3%;
+		height: 66px;
+		color: #fff;
+		text-align: center;
+		padding-top: 25px;
+		margin-bottom: 3px;
+		font-size: 20px;
+		letter-spacing: 0.4px;
+
+		img {
+			vertical-align: middle;
+		}
+
+	}
+	#cm-btn-1 {
+		background-color: rgb(1, 44, 119);
+		.box-shadow(0px 3px 0px 0px rgba(9, 37, 86, 1));
+	}
+	#cm-btn-2 {
+		background: rgb(12, 65, 158);
+		.box-shadow(0px 3px 0px 0px rgba(9, 37, 86, 1));
+	}
+	#cm-btn-3 {
+		background: rgb(17, 101, 171);
+		.box-shadow(0px 3px 0px 0px rgba(15, 75, 125, 1));
+	}
+}
