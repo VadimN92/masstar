@@ -20,9 +20,67 @@
 
 </head>
 <body>
-	<!--[if lt IE 8]>
+	<!--[if lt IE 7]>
      	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script>window.html5 || document.write('<script src="js/html5shiv.js"><\/script>')</script>
+        <link rel="stylesheet" href="css/ie-8.css">
+    <![endif]-->
+    <div class="wrapper"> <!-- wrapper -->
+        <header id="header">
+            <div class="center clearfix">
+                <div class="logo-bl left">
+                    <a href="/">
+                        <img src="images/header-logo.png" alt="logo header">
+                    </a>
+                </div>
+                <div class="h-top-bl right">
+                    <div class="time left">
+                        <span>9:00-18:00</span>
+                        <ul>
+                            <li class="active"></li>
+                            <li class="active"></li>
+                            <li class="active"></li>
+                            <li class="active"></li>
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <a href="#" class="callback left"> <!-- CALLBACK -->
+                        <i class="icon-phone"></i>
+                        <span>обратый звонок</span>
+                    </a>
+                    <div class="contact-phone left"> <!-- CONTACT NUMBER -->
+                        <span>Многоканальный -</span>
+                        <noscript><stan class="num-phone">(495) 215-01-44</stan></noscript>
+                    </div>
+                </div>
+                <nav class="h-nav right"> <!-- NAVIGATION MENU -->
+                <a href="#">Главная</a>
+                <a href="#" class="active">Каталог</a>
+                <a href="#">О коммпании</a>
+                <a href="#">Новости</a>
+                <a href="#">Прайс-листы</a>
+                <a href="#">Доставка и оплата</a>
+                <a href="#">Контакты</a>
+            </nav>
+            </div>
+        </header>
+    </div>
+
+
+
+
+
+
+
+
+
+
         
     <header class="clearfix">  <!-- HEADER -->
         <div class="width-pattern"> <!-- Container 960px -->
@@ -31,7 +89,7 @@
                 <img src="images/header-logo.png" alt="header-logo"> <!-- HEADER LOGO -->
             </a>
 
-            <div class="time-work"> <!-- TIME WHEN SHOP WORK -->
+            <div class="time-work"> <!-- TIME WHEN SHOP WORKS -->
                 <span class="time-text">9:00-18:00</span>
                 <span class="time-img bg-blue"></span>
                 <span class="time-img bg-blue"></span>
@@ -59,7 +117,7 @@
                 <a href="#">Доставка и оплата</a>
                 <a href="#">Контакты</a>
             </nav>
-            <nav class="catalog-menu">  <!-- CATALOG MENU -->
+            <nav class="catalog-menu clearfix">  <!-- CATALOG MENU -->
                 <a href="#popup-1" id="cm-btn-1" class="link-menu">Оргстекло <span class="arrow"></span></a>
                 <a href="#popup-2" id="cm-btn-2" class="link-menu"v>Пластики <span class="arrow"></a>
                 <a href="#popup-3" id="cm-btn-3" class="link-menu">Шумозащита <span class="arrow"></a>

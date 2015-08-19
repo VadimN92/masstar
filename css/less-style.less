@@ -14,79 +14,10 @@
 // Variables
 // -----------------------------------------
 
-// Colors
-// -------------------------
-@redColor:							rgb(135, 49, 73);
-@WhiteColor:						#fff;
-@DarkLight:							rgb(68, 5, 6);
-@gray:								#ccc;
-@grayLight:							#ededed;
-@Dark:								#000;
-@grayDarck:							rgb(86, 86, 86);
-@grayDarckHov:						rgb(54, 4, 4);
-
-
-// Links color
-// -------------------------
-@linkColor:             #0086D4;
-@linkColorHover:        darken(@linkColor, 8%);
-
-// -----------------------------------------
-// Fonts face
-// -----------------------------------------
-	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&subset=cyrillic,latin);
-
-
-// Fonts
-// -------------------------
-@baseFontFamily:		'Open Sans', sans-serif;
-@baseFontSize:          14px;
-@baseLineHeight:        1;
-@textColor:             #000;
-@bodyBackground:        #fff;
-
-@fs11:                  11px;
-@fs12:                  12px;
-@fs13:                  13px;
-@fs14:                  @baseFontSize;
-@fs16:                  16px;
-@fs18:                  18px;
-@fs20:                  20px;
-@fs22:                  22px;
-@fs24:                  24px;
-
-// Width
-// -------------------------
-@wBase:                 1280px;
-@wSideBar:              255px;
-
-// Z-index
-// -------------------------
-@zIndexFill:            1;
-@zIndexBase:            2;
-@zIndexToggle:          20;
-@zIndexFormSelect:      50;
-@zIndexButtonTop:       70;
-
-// Forms
-// -------------------------
-
-@inputHeight:           30px;
-
-// GRID
-// --------------------------------------------------
-// Default 960px grid
-// -------------------------
-@gridColumns:             12;
-@gridColumnWidth:         60px;
-@gridGutterWidth:         0;
-@gridRowWidth:            (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
-
-// Fluid grid
-// -------------------------
-@fluidGridColumnWidth:    percentage(@gridColumnWidth/@gridRowWidth);
-@fluidGridGutterWidth:    percentage(@gridGutterWidth/@gridRowWidth);
-
+// here musr be ariables
+@bodyBackground: #ffffff;
+@textColor: #000000;
+@baseFontSize: 15pt;
 
 // -----------------------------------------
 // Mixins
@@ -152,23 +83,14 @@
 
 
 
-// general block size
-.f_block(){
-	.center-block();
-	width: 95%;
-	max-width: @wBase;
-}
-
-
 // -----------------------------------------
 // Reset
 // -----------------------------------------
-
 body{
 	margin: 0;
-	font-family: @baseFontFamily;
+	padding: 0;
+	font-family: "Calibri";
 	font-size: @baseFontSize;
-	line-height: @baseLineHeight;
 	color: @textColor;
 	background-color: @bodyBackground;
 
@@ -197,46 +119,133 @@ body{
     display: none;
 }
 
-.pull-left{
+.left{
     float: left;
 }
-.pull-right{
+.right{
     float: right;
 }
 
 // Container (centered, fixed-width layouts)
-.container {
+.center {
+	width: 965px;
+	position: relative;
     .container-fixed();
 }
 
-// Fluid layouts (left aligned, with sidebar, min- & max-width content)
-.container-fluid {
-    padding-right: @gridGutterWidth;
-    padding-left: @gridGutterWidth;
-    .clearfix();
-}
-
-.main-container {
-	.f_block();
-}
-
-
-.width-pattern{
-	width: 100%;
-	max-width: 980px;
-	margin: auto;
-	position: relative;
-}
 
 a {
 	text-decoration: none;
 }
 
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
 
 // HEADER style
-header {
+#header {
 	background: rgb(237, 239, 243);
 }
+
+.logo-bl {
+	padding: 13px 0;
+}
+
+.h-top-bl {
+	height: 67px;
+	line-height: 67px;
+	border-bottom: 1px solid rgb(208, 213, 224);
+}
+
+.time {
+
+	ul {
+		display: inline;
+		li {
+			display: inline-block;
+			width: 11px;
+			height: 11px;
+			background: rgb(208, 213, 224);
+			.border-radius(50%);
+		}
+	}
+	.active {
+		background: rgb(1, 44, 119);
+	}
+}
+
+.callback {
+	display: block;
+	height: 36px;
+	padding: 0 12px;
+	margin: 14px 0 0 44px;
+	line-height: 36px;
+	background: #fff;
+	.box-shadow(0px 2px 3px 0px rgba(136, 169, 226, 1));
+	.border-radius(2px);
+
+	span {
+		text-transform: uppercase;
+		color: rgb(17, 101, 171);
+		font-size: 11pt;
+		font-weight: 600;
+	}
+}
+
+.icon-phone {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-right: 11px;
+	background: url(../images/phone.png) no-repeat;
+}
+
+.contact-phone {
+	margin-left: 44px;
+	span {
+		color: rgb(173, 175, 178);
+		font-size: 11pt;
+	}
+	.num-phone {
+		color: rgb(1, 44, 119);
+		font-size: 12pt;
+		font-weight: bold;
+	}
+}
+
+.h-nav {
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		color: rgb(1, 44, 119);
+		font-weight: lighter;
+		padding-bottom: 6px;
+		margin-left: 20px;
+		font-size: 11px;
+		letter-spacing: 1.1px;
+		border-bottom: 1px solid rgb(237, 239, 243);
+
+		&:hover {
+			color: rgb(23, 23, 23);
+			border-bottom: 1px solid rgb(199, 205, 217);
+		}
+	}
+	a.active {
+		color: rgb(23, 23, 23);
+		border-bottom: 1px solid rgb(199, 205, 217);
+	}
+}
+
+
+
+
+
+
+
+
+
 // HEADER LOGO style
 .header-logo {
 	height: 142px;
@@ -244,9 +253,6 @@ header {
 	img {
 		margin-top: 17px;
 	} 
-}
-.time-work, .callback, .contact-phone {	
-	display: inline-block; 
 }
 // TIME WHEN SHOp WORKS style
 .time-work {
@@ -271,7 +277,7 @@ header {
 	}
 }
 // CALLBACK style
-.callback {
+.callback1 {
 	margin: 17px 55px 20px 60px;
 	background: #fff;
 	padding: 9px 15px 10px 9px;
@@ -292,7 +298,7 @@ header {
 	}
 }
 // CONTACT PHONE style
-.contact-phone {
+.contact-phone1 {
 	span {
 		color: rgb(173, 175, 178);
 		font-size: 11px;
@@ -337,13 +343,13 @@ header {
 	}
 }
 
-// START CATALOG MENU style
+// begin CATALOG MENU style
 .catalog-menu {
 	clear: both;
 	position: relative;
 	a {
 		float: left;
-		width: 33.31%;
+		width: 33.3%;
 		height: 66px;
 		color: #fff;
 		text-align: center;
@@ -360,7 +366,6 @@ header {
 	#cm-btn-1 {
 		background-color: rgb(1, 44, 119);
 		.box-shadow(0px 3px 0px 0px rgba(9, 37, 86, 1));
-		Z-index: 999;
 	}
 	#cm-btn-2 {
 		background: rgb(12, 65, 158);
