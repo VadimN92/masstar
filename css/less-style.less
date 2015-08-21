@@ -262,7 +262,7 @@ ul {
 				height: 7px;
 				margin-left: 10px;
 				background: url(../images/arrow-right.png) no-repeat;
-				.transition(.5s);
+				.transition(.8s);
 			}
 		}
 
@@ -317,18 +317,32 @@ ul {
 	background: url(../images/Brightness.png) no-repeat ,
 	url(../images/Leo.png) no-repeat right;
 	z-index: 100;
+	color: #fff;
 }
 
 .hidden-menu {
-	
+	margin-left: 20px;
+	padding-right: 15px;
+	list-style-type: disc; 
+	a {
+		color: #fff;
+	}
 
 }
 
 .hidden-context {
 	display: inline-block;
-	margin-left: 45px;
+	padding-left: 30px;
+	border-left: 1px solid #fff;
 	p {
 		width: 292px;
 		margin: 0;
+	}
+	a {
+		display: inline-block;
+		padding: 15px 30px;
+		background-color: rgb(228, 60, 60);
+		.box-shadow(0px 2px 5px 0px rgba(50, 50, 50, 1));
+		.border-radius(2px);
 	}
 }
