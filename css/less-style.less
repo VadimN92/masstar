@@ -10,6 +10,8 @@
 // ::  Content styles
 // ::  responsive
 
+
+@import "normalize.css";
 // -----------------------------------------
 // Variables
 // -----------------------------------------
@@ -156,7 +158,6 @@ ul {
 .h-top-bl {
 	height: 67px;
 	line-height: 67px;
-	border-bottom: 1px solid rgb(208, 213, 224);
 }
 
 .time {
@@ -216,12 +217,14 @@ ul {
 }
 
 .h-nav {
+	margin-bottom: 1px;
+	border-top: 1px solid rgb(208, 213, 224);
 	a {
 		display: inline-block;
 		text-transform: uppercase;
 		color: rgb(1, 44, 119);
 		font-weight: lighter;
-		padding-bottom: 6px;
+		padding: 30px 0 30px 0;
 		margin-left: 20px;
 		font-size: 11px;
 		letter-spacing: 1.1px;
@@ -240,241 +243,92 @@ ul {
 
 
 
-
-
-
-
-
-
-// HEADER LOGO style
-.header-logo {
-	height: 142px;
-
-	img {
-		margin-top: 17px;
-	} 
-}
-// TIME WHEN SHOp WORKS style
-.time-work {
-	vertical-align: middle;
-	margin-left: 40px;
-	.time-text {
-		color: rgb(191, 193, 196);
-	}
-
-	.time-img {
-		display: inline-block;
-		width: 11px;
-		height: 11px;
-		.border-radius(50%);
-	}
-
-	.bg-blue {
-		background: rgb(1, 44, 119);
-	}
-	.bg-silver {
-		background: rgb(208, 213, 224);
-	}
-}
-// CALLBACK style
-.callback1 {
-	margin: 17px 55px 20px 60px;
-	background: #fff;
-	padding: 9px 15px 10px 9px;
-	.box-shadow(0px 2px 3px 0px rgba(136, 169, 226, 1));
-	.border-radius(2px);
-
-
-	span, img{
-		vertical-align: middle;
-	}
-	span {
-		text-transform: uppercase;
-		color: rgb(17, 101, 171);
-		padding-left: 11px;
-		font-size: 11px;
-		font-weight: bolder;
-		letter-spacing: 1.3px;
-	}
-}
-// CONTACT PHONE style
-.contact-phone1 {
-	span {
-		color: rgb(173, 175, 178);
-		font-size: 11px;
-	}
-	.num-phone {
-		color: rgb(1, 44, 119);
-		font-size: 18px;
-		font-weight: bold;
-		letter-spacing: 1.3px;
-	}
-}
-
-.line {
-	width: 728px;
-	float: right;
-	border-bottom: 1px solid rgb(208, 213, 224);
-}
-// NAVIGATION MENU style
-.main-nav {
-	margin-top: 30px;
-	margin-bottom: 30px;
-	margin-left: 21px;
-	display: inline-block;
-	a {
-		display: inline-block;
-		text-transform: uppercase;
-		color: rgb(1, 44, 119);
-		font-weight: lighter;
-		padding-bottom: 6px;
-		margin-left: 22px;
-		border-bottom: 1px solid rgb(237, 239, 243);
-		font-size: 11px;
-		letter-spacing: 1.1px;
-
-		&:hover {
-			color: rgb(23, 23, 23);
-			border-bottom: 1px solid rgb(199, 205, 217);
-		}
-	}
-	a.active {
-		color: rgb(23, 23, 23);
-	}
-}
-
-// begin CATALOG MENU style
 .catalog-menu {
 	clear: both;
 	position: relative;
-	a {
-		float: left;
+	#cat-bl-1, #cat-bl-2, #cat-bl-3 {
+		
+		.left();
 		width: 33.3%;
-		height: 66px;
-		color: #fff;
-		text-align: center;
-		padding-top: 25px;
-		margin-bottom: 3px;
-		font-size: 20px;
-		letter-spacing: 0.4px;
-
-		img {
-			vertical-align: middle;
+		.cat-btn {
+			display: block;
+			width: 100%;
+			padding: 24px 0 24px 0;
+			text-align: center;
+			color: #fff;
+			i {
+				display: inline-block;
+				width: 7px;
+				height: 7px;
+				margin-left: 10px;
+				background: url(../images/arrow-right.png) no-repeat;
+				.transition(.5s);
+			}
 		}
 
-	}
-	#cm-btn-1 {
-		background-color: rgb(1, 44, 119);
-		.box-shadow(0px 3px 0px 0px rgba(9, 37, 86, 1));
-	}
-	#cm-btn-2 {
-		background: rgb(12, 65, 158);
-		.box-shadow(0px 3px 0px 0px rgba(9, 37, 86, 1));
-	}
-	#cm-btn-3 {
-		background: rgb(17, 101, 171);
-		.box-shadow(0px 3px 0px 0px rgba(15, 75, 125, 1));
-	}
-
-	.arrow {
-		display: inline-block;
-		width: 5px;
-		height: 7px;
-		background: url(../images/arrow-right.png) no-repeat;
-		vertical-align: middle;
-	}
-	.link-menu.active {
-		.arrow {
-			width: 7px;
-			height: 5px;
-			background: url(../images/arrow-down.png) no-repeat;
-		}
-	}
-}
-
-
-
-.popup {
-	position: absolute;
-	width: 100%;
-	height: 403px;
-	top: 222px;
-	padding-left: 326px;
-	padding-top: 71px;
-	display: none;
-	visibility: visible;
-	.box-shadow( 0px 38px 30px 0px rgba(50, 50, 50, 0.28));
-}
-
-.popup-menu {
-	display: inline-block;
-	margin-top: 0;
-	li {
-		color: #fff;
-		margin: 0 15px 22px -22px;
-	}
-	a {
-		color: #fff;
-		border-bottom: 1px solid #fff;
 
 		&:hover {
-			color: rgb(164, 63, 92);
-			border-bottom: 1px solid rgb(164, 63, 92);
+			i {
+				background: url(../images/arrow-down.png) no-repeat;
+			}
+			.hidden-bl {
+				display: block;
+			}
+		}
+	}
+
+
+	#cat-bl-1 {
+		.cat-btn {
+			background-color: rgb(1, 44, 119);
+			.box-shadow(0px 3px 0px 0px rgba(9, 37, 86, 1));
+		}
+		.hidden-bl {
+			background-color: rgb(1, 44, 119);
+		}		
+	}
+	#cat-bl-2 {
+		.cat-btn {
+			background: rgb(12, 65, 158);
+			.box-shadow(0px 3px 0px 0px rgba(9, 37, 86, 1));
+		}
+		.hidden-bl {
+			background-color: rgb(12, 65, 158);
+		}
+	}
+	#cat-bl-3 {
+		.cat-btn {
+			background: rgb(17, 101, 171);
+			.box-shadow(0px 3px 0px 0px rgba(15, 75, 125, 1));
+		}
+		.hidden-bl {
+			background-color: rgb(17, 101, 171);
 		}
 	}
 }
 
-#popup-1 {
-	background: url(../images/fon.jpg) no-repeat;
-	background-size: cover;
-	h2.title {
-		color: #fff;
-		font-size: 18px;
-		font-weight: bold;
-	}
+
+.hidden-bl {
+	position: absolute;
+	display: none;
+	width: 964px;
+	left: 0;
+	padding: 50px 17px 84px 326px;
+	background: url(../images/Brightness.png) no-repeat ,
+	url(../images/Leo.png) no-repeat right;
+	z-index: 100;
 }
 
-.popup-context {
-	width: 322px;
+.hidden-menu {
+	
+
+}
+
+.hidden-context {
 	display: inline-block;
-	border-left: 1px solid rgba(255, 255, 255, 0.2);
-	vertical-align: top;
-	color: #fff;
-	padding-left: 30px;
-
+	margin-left: 45px;
 	p {
-		line-height: 25px;
-
-		&:first-child {
-			margin-top: 0;
-		}
-	}
-
-	a {
-		display: block;
-		width: 180px;
-		height: 36px;
-		padding-top: 11px;
-		color: #fff;
-		text-align: center;
-		font-weight: bold;
-		background: rgb(228, 60, 60);
-		.border-radius(1px);
-		.box-shadow(0px 2px 3px 0px rgba(50, 50, 50, 1));
+		width: 292px;
+		margin: 0;
 	}
 }
-
-#popup-2 {
-	background: url(../images/fon2.jpg) no-repeat;
-	background-size: cover;
-	h2.title {
-		color: rgb(164, 63, 92);
-		font-size: 18px;
-		font-weight: bold;
-	}
-	.popup-context a {
-		color: #000;
-		background: #fff;
-	}
-}
-// END CATALOG MENU style
